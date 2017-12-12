@@ -58,7 +58,8 @@ public class NBody {
             planets[i].update(time, xForce[i], yForce[i]);
             planets[i].draw();
          }
-         StdDraw.show(10);
+         StdDraw.show();
+         StdDraw.pause(10);
          time += dt;      
       }
    }
