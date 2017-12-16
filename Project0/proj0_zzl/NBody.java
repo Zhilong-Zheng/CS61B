@@ -57,13 +57,13 @@ public class NBody {
             yForce[i] = planets[i].calcNetForceExertedByY(planets);
          }
          for(int i = 0; i < planets.length; i++) {
-            planets[i].update(time, xForce[i], yForce[i]);
+            planets[i].update(dt, xForce[i], yForce[i]);
          }
          for(int i = 0; i < planets.length; i++) {
             planets[i].draw();
          }
          StdDraw.show();
-         StdDraw.pause(80);
+         StdDraw.pause(10);
          time += dt;      
       }
    }
