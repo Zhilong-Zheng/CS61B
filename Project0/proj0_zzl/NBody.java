@@ -30,6 +30,11 @@ public class NBody {
       return ps;
    }
    
+	public static void BGMloop(String musicfile){
+		StdAudio.loop("./audio/" + musicfile);
+	}   
+   
+   
    public static void main(String[] args) {
       Double T = Double.parseDouble(args[0]);
       Double dt = Double.parseDouble(args[1]);
@@ -44,6 +49,8 @@ public class NBody {
       for(int i = 0; i < planets.length; i++) {
          planets[i].draw();
       }
+      
+      BGMloop("2001.mid");
       
       double time = 0;
       while(time < T) {
@@ -64,7 +71,8 @@ public class NBody {
          }
          StdDraw.show();
          StdDraw.pause(10);
-         time += dt;      
+         time += dt;  	    
       }
+      
    }
 }  
