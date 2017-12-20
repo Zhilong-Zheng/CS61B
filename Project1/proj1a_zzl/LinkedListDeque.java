@@ -96,5 +96,6 @@ public class LinkedListDeque<Type> {
         return temp.item;
     }
 
+
 }
 
