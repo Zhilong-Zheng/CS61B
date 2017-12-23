@@ -3,9 +3,9 @@ public class LinkedListDeque<Type> {
     private int size;
 
     public class Node  {
-        public Node prev;
-        public Type item;
-        public Node next;
+        private Node prev;
+        private Type item;
+        private Node next;
 
         public Node(Type item, Node prev, Node next) {
             this.prev = prev;
@@ -24,7 +24,7 @@ public class LinkedListDeque<Type> {
         }
     }
 
-    /** constructor */
+    /** constructor. */
     public LinkedListDeque() {
         sentinel = new Node();
         this.size = 0;

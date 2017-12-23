@@ -1,3 +1,6 @@
+/** array based list.
+ * @author Zhilong Zheng
+ */
 public class ArrayDeque<Type> {
     private Type[] items;
     private int front;
@@ -19,6 +22,10 @@ public class ArrayDeque<Type> {
         back = size;
     } */
 
+    /** resize the array list to either larger or smaller scale.
+     * resize the array list into new scale with parameter capacity.
+     * @param capacity non-negative integer
+     */
     public void resize(int capacity) {
         Type[] a = (Type[]) new Object[capacity];
         if (front >= back || size == this.items.length) {
