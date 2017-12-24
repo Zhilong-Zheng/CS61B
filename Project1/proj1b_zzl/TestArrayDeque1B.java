@@ -8,7 +8,7 @@ import org.junit.Test;
 public class TestArrayDeque1B {
     @Test
     public void testSize() {
-        StudentArrayDeque<Integer> test = new StudentArrayDeque<>();
+        ArrayDeque<Integer> test = new ArrayDeque<>();
         ArrayDequeSolution<Integer> solution = new ArrayDequeSolution<>();
 
         for (int i = 0; i < 100; i ++) {

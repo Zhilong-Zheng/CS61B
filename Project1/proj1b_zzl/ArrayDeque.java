@@ -1,7 +1,7 @@
 /** array based list.
  * @author Zhilong Zheng
  */
-public class ArrayDeque<Type> {
+public class ArrayDeque<Type> implements Deque<Type> {
     private Type[] items;
     private int front;
     private int back;
@@ -127,7 +127,7 @@ public class ArrayDeque<Type> {
         if(index >= size){
            return null;
         }
-        if (front >= back) {
+        else if (front >= back) {
             if(index < items.length - front - 1) {
                 return items[front + index + 1];
             }
@@ -140,38 +140,34 @@ public class ArrayDeque<Type> {
         }
     }
 
-    public static void main(String[] args) {
-        ArrayDeque<Integer> array = new ArrayDeque<Integer>();
-        for (int i = 0; i < 18; i++){
-            array.addFirst(i);
-            array.printDeque();
-            System.out.println();
-        }
+//    public static void main(String[] args) {
+//        ArrayDeque<Integer> array = new ArrayDeque<Integer>();
+//        for (int i = 0; i < 18; i++){
+//            array.addFirst(i);
+//            array.printDeque();
+//            System.out.println();
+//        }
+//
+//        for (int i = 0; i < 18; i++){
+//            array.addLast(i);
+//            array.printDeque();
+//            System.out.println();
+//        }
+//
+//        for (int i = 0; i < 18; i++){
+//            System.out.println(array.get(i));
+//        }
+//
+//        for (int i = 0; i < 18; i++){
+//            array.removeLast();
+//            array.printDeque();
+//            System.out.println();
+//        }
+//        for (int i = 0; i < 18; i++){
+//            array.removeFirst();
+//            array.printDeque();
+//            System.out.println();
+//        }
 
-        for (int i = 0; i < 16; i++){
-            System.out.println(array.get(i));
-        }
-
-        for (int i = 0; i < 18; i++){
-            array.addLast(i);
-            array.printDeque();
-            System.out.println();
-        }
-
-        for (int i = 0; i < 35; i++){
-            System.out.println(array.get(i));
-        }
-
-        for (int i = 0; i < 18; i++){
-            array.removeLast();
-            array.printDeque();
-            System.out.println();
-        }
-        for (int i = 0; i < 18; i++){
-            array.removeFirst();
-            array.printDeque();
-            System.out.println();
-        }
-
-    }
+    //   }
 }
