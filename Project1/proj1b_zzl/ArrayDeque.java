@@ -136,7 +136,7 @@ public class ArrayDeque<Type> implements Deque<Type> {
             }
         }
         else {
-            return items[front + index + 1];
+            return items[(front + index + 1) % items.length];
         }
     }
 
