@@ -175,17 +175,26 @@ public class Table<T> {
           for (int j = 0; j < t.nowRow; j++) {
             if (t.table.get(coTitle.get(0)).get(j) == table.get(coTitle.get(0)).get(i)) {
               secondIndex = j;
+              for (int k = 1; k < coTitle.size(); k++) {
+                if (t.table.get(coTitle.get(k)).get(secondIndex) == table.get(coTitle.get(k)).get(i)) {
+                  count++;
+                }
+              }
+              if (count == coTitle.size()) {
+                firstValueIndex.add(i);
+                secondValueIndex.add(secondIndex);
+              }
             }
           }
-          for (int k = 1; k < coTitle.size(); k++) {
-            if (t.table.get(coTitle.get(k)).get(secondIndex) == table.get(coTitle.get(k)).get(i)) {
-              count++;
-            }
-          }
-          if (count == coTitle.size()) {
-            firstValueIndex.add(i);
-            secondValueIndex.add(secondIndex);
-          }
+//          for (int k = 1; k < coTitle.size(); k++) {
+//            if (t.table.get(coTitle.get(k)).get(secondIndex) == table.get(coTitle.get(k)).get(i)) {
+//              count++;
+//            }
+//          }
+//          if (count == coTitle.size()) {
+//            firstValueIndex.add(i);
+//            secondValueIndex.add(secondIndex);
+//          }
         }
       }
       String[] joinTitle = this.mergeTitle(t);
@@ -202,19 +211,21 @@ public class Table<T> {
 
   public static void main(String[] args) {
     String[] title = {"x", "y","z"};
-    String[] title1 = {"m", "y","x", "l"};
+    String[] title1 = {"m", "t","x", "l"};
     Table<Integer> table = new Table<>(title);
     Integer[] row1 = {1, 2, 3};
     Integer[] row2 = {2, 2, 4};
     Integer[] row3 = {0, 3, 5};
     Integer[] row4 = {2, 2, 1, 1};
     Integer[] row5 = {2, 2, 2, 3};
+    Integer[] row6 = {5, 6, 2, 90};
     table.addRow(row1);
     table.addRow(row2);
 
     Table<Integer> table1 = new Table<>(title1);
     table1.addRow(row4);
     table1.addRow(row5);
+    table1.addRow(row6);
     Table<Integer> t3 = table.join(table1);
     t3.printTable();
   }
