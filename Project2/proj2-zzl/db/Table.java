@@ -209,6 +209,8 @@ public class Table<T> {
   }
 
 
+
+
   public static void main(String[] args) {
     String[] title = {"x", "y","z"};
     String[] title1 = {"m", "t","x", "l"};
@@ -216,18 +218,28 @@ public class Table<T> {
     Integer[] row1 = {1, 2, 3};
     Integer[] row2 = {2, 2, 4};
     Integer[] row3 = {0, 3, 5};
-    Integer[] row4 = {2, 2, 1, 1};
-    Integer[] row5 = {2, 2, 2, 3};
-    Integer[] row6 = {5, 6, 2, 90};
+    Integer[] row11 = {4, 3, 5};
+    Integer[] row22 = {5, 3, 5};
+    String[] row4 = {"x", "s", "dm", "q"};
+    String[] row5 = {"y", "k", "bn", "q"};
+    String[] row6 = {"m", "i", "ba", "t"};
+    table.addRow(row22);
     table.addRow(row1);
     table.addRow(row2);
-
-    Table<Integer> table1 = new Table<>(title1);
+    table.addRow(row3);
+    table.addRow(row11);
+    Table<String> table1 = new Table<>(title1);
     table1.addRow(row4);
     table1.addRow(row5);
     table1.addRow(row6);
-    Table<Integer> t3 = table.join(table1);
-    t3.printTable();
+//    Table<Integer> t3 = table.join(table1);
+  //  t3.printTable();
+    Condition<Integer> c1 = new Condition<>("x", 1, 4);
+   // table.printTable();
+   // c1.filter(table).printTable();
+   // table1.printTable();
+    Condition<String> c2 = new Condition<>("x", "a", "bm");
+    c2.filter(table1).printTable();
   }
 }
 
